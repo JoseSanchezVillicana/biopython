@@ -16,7 +16,7 @@ CATEGORY
     
 USAGE
 
-    % python reverse-complement.py -i -o
+    % python reverse-complement.py -i
     
     example
     
