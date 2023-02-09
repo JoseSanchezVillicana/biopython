@@ -8,7 +8,7 @@ VERSION
 AUTHOR
 	
     
-DESCRIPTION
+DESCRIPTION:
 	Make the reverse complement of DNA sequence
     
 CATEGORY
