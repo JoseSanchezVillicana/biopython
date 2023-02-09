@@ -1,5 +1,5 @@
 '''
-NAME
+NAME Pepe
 	reverse-complement.py
     
 VERSION
