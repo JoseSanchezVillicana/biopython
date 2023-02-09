@@ -1,0 +1,9 @@
+# Comandos de git
+
+- git init
+- git add
+- git commit
+- git log (-N, --oneline)
+- git status
+- git diff (--staged)
+
