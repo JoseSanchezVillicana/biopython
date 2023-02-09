@@ -23,4 +23,5 @@ USAGE
     % python reverse-complement -i
 
 '''
-
+print("hola vale")
+print('Hola')
