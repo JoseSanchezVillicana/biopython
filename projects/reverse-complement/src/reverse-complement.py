@@ -5,7 +5,8 @@ NAME
 VERSION
     1.0
     
-AUTHOR: José Antonio Sánchez Villicaña hhhhh
+AUTHOR: 
+    José Antonio Sánchez Villicaña
 	
     
 DESCRIPTION:
