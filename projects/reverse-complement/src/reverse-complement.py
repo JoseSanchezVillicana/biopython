@@ -5,11 +5,10 @@ NAME
 VERSION
     1.0
     
-AUTHOR: 
-    José Antonio Sánchez Villicaña
+AUTHOR
 	
     
-DESCRIPTION:
+DESCRIPTION
 	Make the reverse complement of DNA sequence
     
 CATEGORY
@@ -17,12 +16,11 @@ CATEGORY
     
 USAGE
 
-    % python reverse-complement.py -i
+    % python reverse-complement.py -i 
     
     example
     
     % python reverse-complement -i
 
 '''
-print("hola vale")
-print('Hola')
+
