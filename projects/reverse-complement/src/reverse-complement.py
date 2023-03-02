@@ -6,7 +6,7 @@ VERSION
     1.0
     
 AUTHOR
-	José Antonio Sánchez Villicaña
+	José Antonio Sánchez Villicaña; Valentina Arias
     
 DESCRIPTION
 	Make the reverse complement of DNA sequence
