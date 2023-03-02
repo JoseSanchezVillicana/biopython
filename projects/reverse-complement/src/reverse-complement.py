@@ -7,7 +7,6 @@ VERSION
     
 AUTHOR
 	José Antonio Sánchez Villicaña
-	Bernardo Chombo
     
 DESCRIPTION
 	Make the reverse complement of DNA sequence
