@@ -1,7 +1,7 @@
 # José Antonio Sánchez Villicaña
 ## Tarea 4 - Programación en Python
 ### Antecedentes
-La finalidad de este programa es poner en práctica las sentencias de manejo de archivos, como utilizar una ruta absoluta para acceder a un archivo, extraer su contenido, crear un archivo, escribir en un archivo, etc.
+La finalidad de este programa es poner en práctica las sentencias de manejo de archivos, como utilizar una ruta absoluta para acceder a un archivo, extraer su contenido, crear un archivo, escribir en un archivo, etc. También se pone en práctica el uso de expresiones regulares.
 
 ### Problema
 El programa va a recibir un archivo de texto con una secuencia de DNA y lo va a convertir en un archivo tipo fasta con esa secuencia.

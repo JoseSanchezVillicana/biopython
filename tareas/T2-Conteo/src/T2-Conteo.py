@@ -1,6 +1,6 @@
 '''
 NAME
-        Contenido de AT y GC      
+        Conteo de nucleótidos       
 
 VERSION
         2.0
@@ -9,8 +9,8 @@ AUTHOR
         José ANtonio Sánchez Villicaña
 
 DESCRIPTION
-        Es un programa sencillo que determina proporciones de contenido de AT y GC de una secuencia de DNA
-        proporcionada por el usuario en forma de un archivo de texto.
+        Es un programa sencillo que cuenta los nucleótidos en una secuencia de DNA
+        dada por el usuario mediante un archivo de texto.
 
 CATEGORY
         Conteo
@@ -18,7 +18,7 @@ CATEGORY
 USAGE
 
         Se tiene que proveer la ruta absoluta del archivo de texto con la secuencia de DNA
-        Se despliega el cálculo de proporciones
+        Se despliega los conteos 
 
 
 ARGUMENTS
@@ -31,14 +31,11 @@ ARGUMENTS
         Ts = contenido de T
         Gs = contenido de G
         Cs = contenido de C
-        total = contenido total de nucleótidos
         
 '''
-
 #TESTING
-        #Ruta de archivo de texto a utilizar para pruebas -> 'C:\Users\Pepe S\Documents\Genomicas\2doSemestre\Python\python1\tareas\T3-Contenidos\data\dna.txt'
+        #Ruta de archivo de texto a utilizar para pruebas -> 'C:\Users\Pepe S\Documents\Genomicas\2doSemestre\Python\python1\tareas\T2-Conteo\data\dna.txt'
         #En el README de esta tarea se explica por qué esta sección de testing no está en el encabezado
-
 
 
 # ===========================================================================
@@ -79,7 +76,5 @@ As = my_file_content.count('A')
 Ts = my_file_content.count('T')
 Gs = my_file_content.count('G')
 Cs = my_file_content.count('C')
-total = As + Ts + Gs + Cs
 
-#Cálculo se realiza al mismo tiempo que se despliega
-print(f'Proporciones\nAT: {((As + Ts) * 100 ) / total}%\nGC: {((Gs + Cs) * 100 ) / total}%')
+print(f'Total por base\nA: {As}\tT:{Ts}\tG:{Gs}\tC:{Cs}')
