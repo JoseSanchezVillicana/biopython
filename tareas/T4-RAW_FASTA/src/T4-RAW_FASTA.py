@@ -57,7 +57,7 @@ import argparse
 def formateo(my_file):
 
         my_file_content = ''
-        size = os.path.getsize(input_file)
+        size = os.path.getsize(args.input)
         isempty = size == 0
         
         if not isempty: #Verifico si el archivo está vacío
@@ -88,17 +88,23 @@ def formateo(my_file):
 #Manejo de Argumentos
 parser = argparse.ArgumentParser(description= 'Script que convierte un archivo de texto con una secuencia de DNA en un archivo tipo fasta')
 
+parser.add_argument('-i', '--input',
+                    metavar='path/output/file',
+                    help= 'Input file path',
+                    required=True)
+
 parser.add_argument('-o', '--output',
                     metavar='path/output/file',
-                    help= 'Path for the output file',
+                    help= 'Output file path',
                     required=True)
 
 args = parser.parse_args()
 
+
 #Accedo al archivo con la secuencia
-input_file = input('Escribe la ruta del archivo con la secuencia de DNA: ')
+#input_file = input('Escribe la ruta del archivo con la secuencia de DNA: ')
 try:
-    my_file = open(input_file)
+    my_file = open(args.input)
 except (FileNotFoundError):
     print('ERROR Ruta invalida')
     quit()
