@@ -22,8 +22,8 @@ CATEGORY
 
 USAGE
 
-        Se tiene que proveer la ruta absoluta del archivo de texto con la secuencia de DNA
-        Se tiene que proveer la ruta absoluta de la carpeta donde se quiere guardar el archivo generado
+        Se tiene que proveer la ruta del archivo de texto con la secuencia de DNA
+        Se tiene que proveer la ruta de la carpeta donde se quiere guardar el archivo generado
         Se tiene que proveer el nombre (sin la extensión fasta) del archivo a generar 
 
 
@@ -36,12 +36,6 @@ ARGUMENTS
         new_file = variable del archivo nuevo al que vamos a agregar el contenido del archivo de texto con el formato deseado
         
 '''
-
-#TESTING
-        #Ruta de archivo de texto a utilizar para pruebas -> 'C:\Users\Pepe S\Documents\Genomicas\2doSemestre\Python\python1\tareas\T4-RAW_FASTA\data\dna.txt'
-        #Ruta donde queremos guardar el archivo final -> 'C:\Users\Pepe S\Documents\Genomicas\2doSemestre\Python\python1\tareas\T4-RAW_FASTA\doc'
-        #Para la prueba se está guardando el archivo generado en la carpeta doc de esta tarea
-        #En el README de esta tarea se explica por qué esta sección de testing no está en el encabezado
 
 # ===========================================================================
 # =                            imports
@@ -98,6 +92,11 @@ parser.add_argument('-o', '--output',
                     help= 'Output file path',
                     required=True)
 
+parser.add_argument('-n', '--name',
+                    metavar='path/output/file',
+                    help= 'Output file name',
+                    required=True)
+
 args = parser.parse_args()
 
 
@@ -120,14 +119,10 @@ except (OSError):
     print('ERROR Ruta invalida')
     quit()
 
-#Nombre del archivo de salida
-output_file = input('Escribe el nombre del archivo de salida (sin la extensión .fasta): ')
-output_file += '.fasta'
-
 #Generación del nuevo archivo en formato fasta
 try:
     #Abro el archivo que se va a generar, con w para que reescriba lo que tenga si es que existe
-    new_file = open(output_file, 'w')
+    new_file = open(args.name, 'w')
 
     #Introduzco el formato deseado antes de la secuencia
     new_file.write('> sequence_name\n')
@@ -135,7 +130,7 @@ try:
     new_file.write(my_file_content)
     new_file.close()
 except:
-    print(f'ERROR al intentar crear el archivo {output_file}')
+    print(f'ERROR al intentar crear el archivo {args.name}')
     quit()
 else:
     print('Archivo convertido exitosamente')
