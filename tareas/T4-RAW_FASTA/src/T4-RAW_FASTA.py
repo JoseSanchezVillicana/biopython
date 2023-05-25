@@ -6,7 +6,7 @@ VERSION
         2.0
 
 AUTHOR
-        José ANtonio Sánchez Villicaña
+        José Antonio Sánchez Villicaña
 
 DESCRIPTION
         Crear un archivo fasta a partir de la secuencia en un archivo de texto
@@ -48,10 +48,52 @@ ARGUMENTS
 # ===========================================================================
 import os
 import re
+import argparse
+
+# ===========================================================================
+# =                            functions
+# ===========================================================================
+
+def formateo(my_file):
+
+        my_file_content = ''
+        size = os.path.getsize(input_file)
+        isempty = size == 0
+        
+        if not isempty: #Verifico si el archivo está vacío
+
+                for linea in my_file:
+                     
+                     linea = linea.replace('\n','')
+
+                     if re.search(r'[^ATCG]', my_file_content):
+                        print('ERROR caracter extraño identificado (no es nucleótido)')
+                        quit()
+                     
+                     else:
+                        my_file_content += linea
+                        my_file_content += '\n'
+                
+                my_file.close()
+        else: 
+                print('ERROR archivo vacío')
+                quit()
+        
+        return my_file_content
 
 # ===========================================================================
 # =                             main
 # ===========================================================================
+
+#Manejo de Argumentos
+parser = argparse.ArgumentParser(description= 'Script que convierte un archivo de texto con una secuencia de DNA en un archivo tipo fasta')
+
+parser.add_argument('-o', '--output',
+                    metavar='path/output/file',
+                    help= 'Path for the output file',
+                    required=True)
+
+args = parser.parse_args()
 
 #Accedo al archivo con la secuencia
 input_file = input('Escribe la ruta del archivo con la secuencia de DNA: ')
@@ -61,24 +103,13 @@ except (FileNotFoundError):
     print('ERROR Ruta invalida')
     quit()
 
-#Leo el contenido
-size = os.path.getsize(input_file)
-isempty = size == 0
-if not isempty: #Verifico si el archivo está vacío
-        my_file_content = my_file.read()
-        my_file_content = my_file_content.replace('\n','')
-        if re.search(r'[^ATCG]', my_file_content):
-             print('ERROR caracter extraño identificado (no es nucleótido)')
-             quit()
-        my_file.close()
-else: 
-     print('ERROR archivo vacío')
-     quit()
+#Llamada a fxn que formatea y verifica el archivo de entrada
+my_file_content = formateo(my_file)
 
-#Obtengo ruta de la carpeta donde se guardará el archivo y me muevo ahí
-target_dir = input('Ingresa la ruta de la carpeta donde se guardará el archivo convertido: ')
+
+#Verifico que la ruta target es correcta
 try:
-    os.chdir(target_dir)
+    os.chdir(args.output)
 except (OSError):
     print('ERROR Ruta invalida')
     quit()
@@ -91,6 +122,7 @@ output_file += '.fasta'
 try:
     #Abro el archivo que se va a generar, con w para que reescriba lo que tenga si es que existe
     new_file = open(output_file, 'w')
+
     #Introduzco el formato deseado antes de la secuencia
     new_file.write('> sequence_name\n')
     #Introduzco la secuencia obtenida a partir del archivo introducido por el usuario
@@ -98,5 +130,6 @@ try:
     new_file.close()
 except:
     print(f'ERROR al intentar crear el archivo {output_file}')
+    quit()
 else:
     print('Archivo convertido exitosamente')
