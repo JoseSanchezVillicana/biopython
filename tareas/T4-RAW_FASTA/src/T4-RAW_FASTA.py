@@ -22,6 +22,8 @@ CATEGORY
 
 USAGE
 
+        % python T4-RAW_FASTA.py -i inputfile -o outputfile 
+        
         Se tiene que proveer la ruta del archivo de texto con la secuencia de DNA
         Se tiene que proveer la ruta de la carpeta donde se quiere guardar el archivo generado
         Se tiene que proveer el nombre (sin la extensión fasta) del archivo a generar 
