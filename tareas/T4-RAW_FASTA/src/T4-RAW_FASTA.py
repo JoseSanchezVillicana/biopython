@@ -50,6 +50,7 @@ import argparse
 
 def formateo(my_file):
 
+        contador = 1
         my_file_content = ''
         size = os.path.getsize(args.input)
         isempty = size == 0
@@ -66,7 +67,8 @@ def formateo(my_file):
                         quit()
                      
                      else:
-                        my_file_content += '> sequence_name\n' + linea + '\n'
+                        my_file_content += '> sequence_name' + str(contador) + '\n' + linea + '\n'
+                        contador += 1
                 
                 my_file.close()
         else: 
@@ -130,5 +132,6 @@ try:
 except:
     print(f'ERROR al intentar crear el archivo {args.name}')
     quit()
+
 else:
     print('Archivo convertido exitosamente')
