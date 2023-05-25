@@ -60,13 +60,13 @@ def formateo(my_file):
                      
                      linea = linea.replace('\n','')
 
-                     if re.search(r'[^ATCG]', my_file_content):
+                     if re.search(r'[^ATCG]', linea):
                         print('ERROR caracter extraño identificado (no es nucleótido)')
+                        print(re.search(r'[^ATCG]', my_file_content))
                         quit()
                      
                      else:
-                        my_file_content += linea
-                        my_file_content += '\n'
+                        my_file_content += '> sequence_name\n' + linea + '\n'
                 
                 my_file.close()
         else: 
@@ -101,7 +101,6 @@ args = parser.parse_args()
 
 
 #Accedo al archivo con la secuencia
-#input_file = input('Escribe la ruta del archivo con la secuencia de DNA: ')
 try:
     my_file = open(args.input)
 except (FileNotFoundError):
@@ -124,11 +123,10 @@ try:
     #Abro el archivo que se va a generar, con w para que reescriba lo que tenga si es que existe
     new_file = open(args.name, 'w')
 
-    #Introduzco el formato deseado antes de la secuencia
-    new_file.write('> sequence_name\n')
     #Introduzco la secuencia obtenida a partir del archivo introducido por el usuario
     new_file.write(my_file_content)
     new_file.close()
+
 except:
     print(f'ERROR al intentar crear el archivo {args.name}')
     quit()
