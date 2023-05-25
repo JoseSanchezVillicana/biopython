@@ -3,7 +3,7 @@ NAME
         Archivo RAW a FASTA       
 
 VERSION
-        2.0
+        3.0
 
 AUTHOR
         José Antonio Sánchez Villicaña
@@ -14,7 +14,7 @@ DESCRIPTION
 
         Ejemplo de un archivo fasta:
 
-        > sequence_name
+        > sequence_name{#}
         ATCGACTGATCGATCGTACGAT
 
 CATEGORY
@@ -67,7 +67,7 @@ def formateo(my_file):
                         quit()
                      
                      else:
-                        my_file_content += '> sequence_name' + str(contador) + '\n' + linea + '\n'
+                        my_file_content += '> sequence_name{' + str(contador) + '}\n' + linea + '\n\n'
                         contador += 1
                 
                 my_file.close()
@@ -85,7 +85,7 @@ def formateo(my_file):
 parser = argparse.ArgumentParser(description= 'Script que convierte un archivo de texto con una secuencia de DNA en un archivo tipo fasta')
 
 parser.add_argument('-i', '--input',
-                    metavar='path/output/file',
+                    metavar='path/input/file',
                     help= 'Input file path',
                     required=True)
 
@@ -95,7 +95,7 @@ parser.add_argument('-o', '--output',
                     required=True)
 
 parser.add_argument('-n', '--name',
-                    metavar='path/output/file',
+                    metavar='path/output/file/name',
                     help= 'Output file name',
                     required=True)
 
