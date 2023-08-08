@@ -3,7 +3,7 @@ NAME
        Piedra, papel o tijera
 
 VERSION
-        1.0
+        2.0
 
 AUTHOR
         José Antonio Sánchez Villicaña
