@@ -7,6 +7,7 @@ VERSION
 
 AUTHOR
         José Antonio Sánchez Villicaña
+        Bernardo Chombo
 
 DESCRIPTION
         Se trata de una simulación del juego clásico de piedra, papel o tijera en el que el usuario elegirá una de las opciones y la computadora elegirá otra al azar.
