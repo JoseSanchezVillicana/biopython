@@ -16,7 +16,7 @@ DESCRIPTION
         Papel le gana a la piedra.
 
 CATEGORY
-        Entretenimiento-
+        Entretenimiento y juegos
 
 USAGE
 
@@ -37,7 +37,8 @@ ARGUMENTS
 # ===========================================================================
 # =                            imports
 # ===========================================================================
-import random
+import random 
+import numpy as np
 
 
 # ===========================================================================
