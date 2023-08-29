@@ -1,4 +1,7 @@
 # python1
 # Autor José Antonio Sánchez Villicaña
 
-Qué pedo we
+- Esta
+- es
+- una
+- prueba
