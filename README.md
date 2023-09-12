@@ -1,6 +1,7 @@
 # BioPython
 # Autor: *José Antonio Sánchez Villicaña*
 
+<<<<<<< HEAD
 Repositorio creado para la clase de BioPython.
 Contiene ejercicios de práctica, tareas y proyectos. 
 
@@ -53,3 +54,6 @@ https://github.com/JoseSanchezVillicana/biopython/blob/master/tareas/ByoP_POO/sr
 Se trata de una simulación de animales en un zoológico o algún tipo de reservaen el que los animales viven en lotes numerados. La simulación incluye un sistema en donde los animales se reproducen, crecen y existe la posibilidad de que mueran.
 
 Es un ejercicio para poner en práctica conceptos clave de la programación orientada a objetos (POO) con un ejemplo práctico y dinámico.
+=======
+papa con chorizo
+>>>>>>> 9eec789d182a10a6ec443403043582df015f6ad3
